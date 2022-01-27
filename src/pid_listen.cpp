@@ -1,4 +1,4 @@
-#include "lino_pid/lino_pid_core.h"
+#include "gvac_pid/gvac_pid_core.h"
 
 int main(int argc, char **argv)
 {
@@ -11,9 +11,9 @@ int main(int argc, char **argv)
   ros::NodeHandle pnh("~");
   pnh.param("rate", rate, int(40));
 
-  LinoPID *lino_pid = new LinoPID();
+  GvacPID *gvac_pid = new GvacPID();
 
-  ros::Subscriber sub_message = nh.subscribe("pid", 1000, &LinoPID::messageCallback, lino_pid);
+  ros::Subscriber sub_message = nh.subscribe("pid", 1000, &GvacPID::messageCallback, gvac_pid);
 
   ros::Rate r(rate);
 
