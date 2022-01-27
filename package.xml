@@ -1,11 +1,11 @@
 <package format="2">
-    <name>lino_pid</name>
+    <name>gvac_pid</name>
     <version>0.0.1</version>
-    <description>lino_robot PID dynamic_reconfigure</description>
-    <author>Juan Jimeno</author>
-    <maintainer email="jimenojmm@gmail.com">Juan Jimeno</maintainer>
-    <license>BSD</license>
-    <url>https://github.com/grassjelly/lino_pid</url>
+    <description>gvac_robot PID dynamic_reconfigure</description>
+    
+    <maintainer email="gvac@todo.todo">gvac</maintainer>
+    <license>TODO</license>
+    <url>https://github.com/gssabu/gvac_pid</url>
 
     <buildtool_depend>catkin</buildtool_depend>
     <build_depend>message_generation</build_depend>
@@ -15,5 +15,5 @@
     <depend>roscpp</depend>
     <depend>rospy</depend>
     <depend>std_msgs</depend>
-    <depend>lino_msgs</depend>
+    <depend>gvac_msgs</depend>
 </package>
