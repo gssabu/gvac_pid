@@ -15,8 +15,8 @@
 class GvacPID
 {
 public:
-  LinoPID();
-  ~LinoPID();
+  GvacPID();
+  ~GvacPID();
   void configCallback(lino_pid::gvacPIDConfig &config, double level);
   void publishMessage(ros::Publisher *pub_message);
   void messageCallback(const gvac_msgs::PID::ConstPtr &msg);
