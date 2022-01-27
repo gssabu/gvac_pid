@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(lino_pid)
+project(gvac_pid)
 
-find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure message_generation roscpp std_msgs lino_msgs)
+find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure message_generation roscpp std_msgs gvac_msgs)
 
 #add_message_files(
 #  FILES
@@ -13,12 +13,12 @@ generate_messages(
 )
 
 generate_dynamic_reconfigure_options(
-    cfg/linoPID.cfg
+    cfg/gvacPID.cfg
 )
 
 catkin_package(
     INCLUDE_DIRS include
-    CATKIN_DEPENDS dynamic_reconfigure message_runtime roscpp std_msgs lino_msgs
+    CATKIN_DEPENDS dynamic_reconfigure message_runtime roscpp std_msgs gvac_msgs
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS})
@@ -28,9 +28,9 @@ set (BINNAME1 pid_configure)
 set (BINNAME2 pid_listen)
 
 # Set the source files to use with the executable.
-set (SRCS1 ${SRCS1} src/lino_pid_core.cpp)
+set (SRCS1 ${SRCS1} src/gvac_pid_core.cpp)
 set (SRCS1 ${SRCS1} src/pid_configure.cpp)
-set (SRCS2 ${SRCS2} src/lino_pid_core.cpp)
+set (SRCS2 ${SRCS2} src/gvac_pid_core.cpp)
 set (SRCS2 ${SRCS2} src/pid_listen.cpp)
 
 # Build the executable that will be used to run this node.
