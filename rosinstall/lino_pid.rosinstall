@@ -1,4 +1,4 @@
 - git:
-    local-name: lino_pid
-    uri: 'https://github.com/grassjelly/lino_pid.git
+    local-name: gvac_pid
+    uri: 'https://github.com/gssabu/gvac_pid.git
     version: indigo
