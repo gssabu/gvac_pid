@@ -1,4 +1,4 @@
-#include "lino_pid/lino_pid_core.h"
+#include "gvac_pid/gvac_pid_core.h"
 
 int main(int argc, char **argv)
 {
@@ -6,11 +6,11 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "pid_configure");
   ros::NodeHandle nh;
 
-  LinoPID *lino_pid = new LinoPID();
+  GvacPID *gvac_pid = new GvacPID();
 
-  dynamic_reconfigure::Server<lino_pid::linoPIDConfig> dr_srv;
-  dynamic_reconfigure::Server<lino_pid::linoPIDConfig>::CallbackType cb;
-  cb = boost::bind(&LinoPID::configCallback, lino_pid, _1, _2);
+  dynamic_reconfigure::Server<gvac_pid::gvacPIDConfig> dr_srv;
+  dynamic_reconfigure::Server<gvac_pid::gvacPIDConfig>::CallbackType cb;
+  cb = boost::bind(&GvacPID::configCallback, gvac_pid, _1, _2);
   dr_srv.setCallback(cb);
 
   double p;
@@ -24,13 +24,13 @@ int main(int argc, char **argv)
   pnh.param("i", i, 0.5);
   pnh.param("rate", rate, 1);
 
-  ros::Publisher pub_message = nh.advertise<lino_msgs::PID>("pid", 10);
+  ros::Publisher pub_message = nh.advertise<gvac_msgs::PID>("pid", 10);
 
   ros::Rate r(rate);
 
   while (nh.ok())
   {
-    lino_pid->publishMessage(&pub_message);
+    gvac_pid->publishMessage(&pub_message);
     ros::spinOnce();
     r.sleep();
   }
